@@ -1,0 +1,9 @@
+<h3> 写 <%= @group.title %> 的ORID</h3>
+
+<hr>
+
+<%= simple_form_for [@group, @post] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.submit "送出" %>
+<% end %>

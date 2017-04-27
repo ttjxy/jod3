@@ -7,4 +7,7 @@ class User < ApplicationRecord
   def admin?
     email == '1@2'
   end
+
+  has_many :posts
+  
 end
