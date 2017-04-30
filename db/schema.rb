@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170427161042) do
     t.string   "title"
     t.text     "content2"
     t.text     "content3"
+    t.text     "content4"
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,9 +3,10 @@
 <hr>
 
 <%= simple_form_for [@group, @post] do |f| %>
-  <%= f.input :title, :label => "ORID标题" %>
-  <%= f.input :content, :label => "ORID内容" %>
-  <%= f.input :content2, :label => "ORID内容" %>
-  <%= f.input :content3, :label => "ORID内容" %>
+  <%= f.input :title, :label => "ORID标题", placeholder:"用最深刻的感受为你的ORID命名吧" %>
+  <%= f.input :content, :label => "O:" ,hint:"Objective:客观事实",placeholder:"Objective:关于今天的学习，我还记得什么？"%>
+  <%= f.input :content2, :label => "R:" ,hint:"Reflective:情绪描述",placeholder:"Reflective:今天学习过程中，我情绪的高峰点是什么？另外低谷点是什么？"%>
+  <%= f.input :content3, :label => "I:" ,hint:"Interpretie:领悟收获",placeholder:"Interpretie:通过今天的学习，我获得了什么领悟和收获？"%>
+  <%= f.input :content4, :label => "D:" ,hint:"Decisional:下一步计划",placeholder:"Decisional:今天的学习情况如何，我下一步打算怎么做？"%>
   <%= f.submit "提交" %>
 <% end %>

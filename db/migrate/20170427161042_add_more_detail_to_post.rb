@@ -3,5 +3,6 @@ class AddMoreDetailToPost < ActiveRecord::Migration[5.0]
     add_column :posts, :title, :string
     add_column :posts, :content2, :text
     add_column :posts, :content3, :text
+    add_column :posts, :content4, :text
   end
 end
