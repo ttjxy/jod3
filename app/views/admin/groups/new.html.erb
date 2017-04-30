@@ -1,9 +1,11 @@
-<h1> Add a group </h1>
+<h1> 新建群组</h1>
 
 <%= simple_form_for [:admin,@group] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :title, :label => "群组名称" %>
+<%= f.input :description, :label => "今日计划" %>
+
+
 
   <%= f.submit "Submit" %>
 <% end %>

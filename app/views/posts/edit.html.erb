@@ -3,9 +3,11 @@
 <hr>
 
 <%= simple_form_for [@group, @post] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.submit "送出" %>
+  <%= f.input :title, :label => "ORID标题" %>
+  <%= f.input :content, :label => "ORID内容" %>
+  <%= f.input :content2, :label => "ORID内容" %>
+  <%= f.input :content3, :label => "ORID内容" %>
+  <%= f.submit "提交" %>
 <% end %>
 
 

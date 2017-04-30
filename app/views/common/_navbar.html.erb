@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">job 3</a>
+            <a class="navbar-brand" href="/">Let's together</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -9,7 +9,7 @@
                 <li>
                   <% if !current_user %>
                   <li><%= link_to("注册", new_user_registration_path) %> </li>
-                  <li><%= link_to("登入", new_user_session_path) %></li>
+                  <li><%= link_to("登陆", new_user_session_path) %></li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -18,9 +18,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% if current_user.admin? %>
-                        <li> <%= link_to("Admin Panel", admin_groups_path) %> </li>
+                        <li> <%= link_to("管理员后台", admin_groups_path) %> </li>
                         <% end %>
-                        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                        <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
                 <% end %>

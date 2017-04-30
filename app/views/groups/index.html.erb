@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("Add a group", new_group_path, :class => "btn btn-default" ) %>
+  <%= link_to("添加群组", new_group_path, :class => "btn btn-default" ) %>
 </div>
 
 <table class="table table-bordered">
@@ -9,8 +9,8 @@
       <%= link_to(group.title, group_path(group)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_group_path(group)) %> |
-      <%= link_to("Destroy", group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= link_to("编辑群组", edit_group_path(group)) %> |
+      <%= link_to("删除群组", group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
       <%= group.created_at %>
