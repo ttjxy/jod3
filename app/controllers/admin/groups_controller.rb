@@ -1,5 +1,6 @@
 class Admin::GroupsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :find_group_and_check_permission, only: [:update, :edit, :destroy]
   before_action :require_is_admin
 
   def index
@@ -17,20 +18,21 @@ class Admin::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.user = current_user
 
     if @group.save
-      redirect_to groups_path
+      redirect_to admin_groups_path
     else
       render :new
     end
   end
 
   def edit
-    @group = Group.find(params[:id])
+
   end
 
   def update
-    @group = Group.find(params[:id])
+
     if @group.update(group_params)
       redirect_to admin_groups_path
     else
@@ -39,7 +41,7 @@ class Admin::GroupsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:id])
+
 
     @group.destroy
 
@@ -49,8 +51,9 @@ class Admin::GroupsController < ApplicationController
   private
   def find_group_and_check_permission
     @group = Group.find(params[:id])
+
     if current_user != @group.user
-      redirect_to groups_path, alert: "只有群组创建者，才能修改哦"
+      redirect_to admin_groups_path, alert: "只有群组创建者，才能修改哦"
     end
   end
 

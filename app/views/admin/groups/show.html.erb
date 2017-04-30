@@ -1,9 +1,9 @@
 <h1> <%= @group.title %> </h1>
 <%= simple_format(@group.description2) %>
 <td>
-
+  <% if current_user && current_user == @group.user %>
   <%= link_to('编辑计划', edit_admin_group_path(@group), class: "btn btn-default btn-xs") %>
-  
+  <% end %>
 </td>
 <p>
   <%= simple_format(@group.description) %>
@@ -23,10 +23,10 @@
           <td><%= post.user.email %></td>
           <td><%= post.created_at %></td>
           <td>
-
+            <% if current_user && current_user == @post.user %>
             <td> <%= link_to('编辑', edit_group_post_path(post.group, post), class: "btn btn-default btn-xs") %></td>
             <td> <%= link_to('删除', group_post_path(post.group, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
-
+            <% end %>
           </td>
         </tr>
       <% end %>

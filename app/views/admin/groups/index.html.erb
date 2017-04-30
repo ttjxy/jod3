@@ -5,25 +5,35 @@
 <br><br>
 
 <table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>群组</td>
+      <td>创建者</td>
+      <td>管理选项</td>
+      <td>创建时间</td>
+    </tr>
+  </thead>
+  <tbody>
   <% @groups.each do |group| %>
   <tr>
     <td>
       <%= link_to(group.title, admin_group_path(group)) %>
     </td>
-    
+
     <td>
-      <%= group.user_id %>
+      <%= group.user.email %>
     </td>
 
     <td>
-
+      <% if current_user && current_user == group.user %>
       <%= link_to("编辑群组", edit_admin_group_path(group)) %>
       <%= link_to("删除群组", admin_group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-
+      <% end %>
     </td>
     <td>
       <%= group.created_at %>
     </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
