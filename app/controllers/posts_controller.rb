@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :find_post_and_check_permission, only: [:update, :edit, :destroy]
 
   def show
     @group = Group.find(params[:group_id])
@@ -25,13 +26,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:group_id])
-    @post = Post.find(params[:id])
+
   end
 
   def update
-    @group = Group.find(params[:group_id])
-    @post = Post.find(params[:id])
+
     if @post.update(post_params)
       redirect_to group_path(@group), notice: '更新成功'
     else
@@ -40,8 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:group_id])
-    @post = Post.find(params[:id])
+
     @post.destroy
     redirect_to group_path(@group)
   end
@@ -49,9 +47,20 @@ class PostsController < ApplicationController
 
   private
 
+  def find_post_and_check_permission
+    @group = Group.find(params[:group_id])
+    @post = Post.find(params[:id])
+
+    if current_user != @post.user
+      redirect_to group_path(@group), alert: "只有ORID创建者，才能修改哦"
+    end
+  end
+
   def post_params
     params.require(:post).permit(:title, :content, :content2, :content3, :content4)
   end
+
+
 
 
 end

@@ -10,9 +10,16 @@
     <td>
       <%= link_to(group.title, admin_group_path(group)) %>
     </td>
+    
     <td>
+      <%= group.user_id %>
+    </td>
+
+    <td>
+
       <%= link_to("编辑群组", edit_admin_group_path(group)) %>
       <%= link_to("删除群组", admin_group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
     </td>
     <td>
       <%= group.created_at %>

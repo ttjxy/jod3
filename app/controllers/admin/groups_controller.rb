@@ -19,7 +19,7 @@ class Admin::GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      redirect_to admin_groups_path
+      redirect_to groups_path
     else
       render :new
     end
@@ -47,9 +47,15 @@ class Admin::GroupsController < ApplicationController
   end
 
   private
+  def find_group_and_check_permission
+    @group = Group.find(params[:id])
+    if current_user != @group.user
+      redirect_to groups_path, alert: "只有群组创建者，才能修改哦"
+    end
+  end
 
   def group_params
-    params.require(:group).permit(:title, :description, :description2)
+    params.require(:group).permit(:title, :description, :description2, :user_id)
   end
 
 end

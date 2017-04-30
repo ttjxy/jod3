@@ -1,6 +1,10 @@
 <h1> <%= @group.title %> </h1>
 <%= simple_format(@group.description2) %>
-<td> <%= link_to('编辑计划', edit_admin_group_path(@group), class: "btn btn-default btn-xs") %></td>
+<td>
+
+  <%= link_to('编辑计划', edit_admin_group_path(@group), class: "btn btn-default btn-xs") %>
+  
+</td>
 <p>
   <%= simple_format(@group.description) %>
   <table class="table">
@@ -19,8 +23,10 @@
           <td><%= post.user.email %></td>
           <td><%= post.created_at %></td>
           <td>
+
             <td> <%= link_to('编辑', edit_group_post_path(post.group, post), class: "btn btn-default btn-xs") %></td>
             <td> <%= link_to('删除', group_post_path(post.group, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+
           </td>
         </tr>
       <% end %>

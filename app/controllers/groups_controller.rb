@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+before_action :require_is_admin, only: [:new, :create, :update, :edit, :destroy]
 
   def index
     @groups = Group.all
@@ -46,4 +47,5 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
   def group_params
     params.require(:group).permit(:title, :description, :description2)
   end
+
 end

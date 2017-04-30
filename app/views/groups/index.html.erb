@@ -1,12 +1,21 @@
 
 
 <table class="table table-bordered">
-
+  <thead>
+    <tr>
+      <td>群组</td>
+      <td>创建者</td>
+      <td>创建时间</td>
+    </tr>
+  </thead>
 
   <% @groups.each do |group| %>
   <tr>
     <td>
       <%= link_to(group.title, group_path(group)) %>
+    </td>
+    <td>
+      <%= group.user_id %>
     </td>
 
     <td>

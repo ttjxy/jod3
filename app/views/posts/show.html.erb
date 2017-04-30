@@ -1,11 +1,12 @@
 <h1> <%= @post.title %> </h1>
 <td>
+  <% if current_user && current_user == @post.user %>
   <%= link_to('编辑', edit_group_post_path(@post.group, @post), class: "btn btn-default btn-xs") %>
   <%= link_to('删除', group_post_path(@post.group, @post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %>
+  <% end %>
 </td>
 
 <p>
-
   <table class="table">
     <thead>
      <tr>
