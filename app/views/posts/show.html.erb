@@ -24,3 +24,16 @@
     </tbody>
   </table>
 </p>
+
+
+<!--<h1> <%= @post.title %> </h1>
+<td>
+  <%= link_to('编辑', edit_group_post_path(@post.group, @post), class: "btn btn-default btn-xs") %>
+  <%= link_to('删除', group_post_path(@post.group, @post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %>
+</td>
+<p>
+<td> <%= simple_format(@post.content) %> </td>
+<td> <%= simple_format(@post.content2) %> </td>
+<td> <%= simple_format(@post.content3) %> </td>
+<td> <%= simple_format(@post.content4) %> </td>
+</p>

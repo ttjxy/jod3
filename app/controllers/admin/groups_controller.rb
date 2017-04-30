@@ -8,6 +8,7 @@ class Admin::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @posts = @group.posts
   end
 
   def new
@@ -48,7 +49,7 @@ class Admin::GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:title, :description)
+    params.require(:group).permit(:title, :description, :description2)
   end
 
 end

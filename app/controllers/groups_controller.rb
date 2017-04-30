@@ -44,6 +44,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
   private
   def group_params
-    params.require(:group).permit(:title, :description)
+    params.require(:group).permit(:title, :description, :description2)
   end
 end

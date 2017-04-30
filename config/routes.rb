@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :groups
+    resources :groups do
+      resources :posts
+    end
   end
 
   resources :groups do
