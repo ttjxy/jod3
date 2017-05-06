@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Job3</title>
+    <title>Let's together</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,8 +10,10 @@
 
   <body>
     <div class="container-fluid">
+      <div class="row">
       <%= render "common/navbar"%>
       <%= render "common/flashes"%>
+      </div>
       <%= yield %>
     </div>
     <%= render "common/footer"%>

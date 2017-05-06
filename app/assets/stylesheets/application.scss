@@ -16,3 +16,129 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+//---------Navbar---------
+
+ .navbar-default {
+     background-color: #87CEFA;
+     border-color: #87CEFA;
+     margin-bottom: 0;
+     border-radius: 0;
+ }
+
+ .navbar-default .navbar-brand {
+     color: white;
+     padding: 10px 15px;
+     line-height: 30px;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color: white;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color: white;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color: white;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color: white;
+     background-color: #FFE0B2;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+     color: #212121;
+ }
+
+ .navbar-brand > img {
+      display: inline-block; //图片和链接文字显示在同一行
+      margin-right: 10px; //图片和链接文字拉开一点距离
+      width: 32px; //定制图片宽度
+      height: 32px; //定制图片高度
+  }
+//---------Box---------
+
+ .box {
+     background-image: url("1-66-3.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     margin-bottom: 50px;
+
+     .box-inner {
+         background-color: rgba(250, 250, 250, 0);
+         padding-bottom: 0px;
+         margin-top: 150px;
+         margin-bottom: 50px;
+     }
+
+     .title {
+         text-align: right;
+         font-style:oblique;
+         font-size: 80px;
+         color: white;
+         margin-top: 0px;
+     }
+
+     .slogan {
+         text-align: right;
+
+         font-size: 45px;
+         color: blue;
+         top: 0px;
+         margin-top: 10px;
+         margin-bottom: 50px;
+     }
+
+     .lead {
+         font-style:oblique;
+         font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+         font-color: red;
+         font-size: 45px;
+         margin-bottom: 60px;
+         text-align: right;
+         padding-right: 180px;
+         color: blue;
+     }
+ }
+
+ //---------Content---------
+
+  .content-section-a {
+      padding: 50px 0;
+      background-color: #f8f8f8;
+  }
+
+  .content-section-b {
+      padding: 50px 0;
+      border-top: 1px solid #e7e7e7;
+      border-bottom: 1px solid #e7e7e7;
+  }
+
+  .section-heading-spacer {
+      float: left;
+      width: 200px;
+      border-top: 3px solid #e7e7e7;
+  }
+
+  .section-heading {
+      margin-bottom: 30px;
+  }
+
+  .lead {
+      font-size: 18px;
+      font-weight: 400;
+  }
